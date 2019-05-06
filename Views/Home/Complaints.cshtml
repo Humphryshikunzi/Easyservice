@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Complaints";
+}
+
+<!--Professionals-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complaints</title>
+</head>
+<body style="text-align:center;">
+<p>We are sorry that you have had a comlaint against part of our services .<br>
+Please use this page to send us your <strong>genuine</strong> concerns
+<form name="form1"  style="text-align:center">
+    <textarea name="complaints" placeholder="Write your complaint here" cols="50"  rows="10"wrap="hard"></textarea>
+</form>
+<p id="confirmed"></p>
+<script>
+    var complaint=document.form1.complaints.value;
+    function submitcomplain(){
+        var datatosend="Name=name&RegistrationNumber=regnum"
+        var replaceddata=datatosend.replace(/name/gi,complaint).replace(/regnum/gi,complaint)
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "https://shiksstudentsapi.azurewebsites.net/api/Students", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(replaceddata);
+        document.getElementById("confirmed").innerHTML="Thank you for your complaint , we shall help you as soon as we can , your views are valued"
+    }
+</script>
+<button type="button" onclick="submitcomplain()" >Send complaint</button><br><br><br>
+</body>
+</html>
+
