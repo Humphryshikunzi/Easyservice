@@ -10,3 +10,4 @@ because you need to access them by call
 We will impove the app such that fraud users will be automatically removed form the system based on analysis by our complex Machine Learning 
 algorithms based on user data like complaints and so on
 Everyone welcome to the amazing world with Easyservice app , everything is easy with Easyservice , what are you waiting for!
+Today I integrated this project to Azure DevOps
